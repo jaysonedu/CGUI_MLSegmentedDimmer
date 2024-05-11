@@ -8,7 +8,7 @@ Windows, ML API Level: 33, OS Version: 1.6.0, C SDK Version: 1.6.0, Unity SDK Ve
 
 1. Follow the instructions on https://developer-docs.magicleap.cloud/docs/guides/unity/getting-started/install-the-tools/ to set up a Unity Magic Leap project using MLSDK. (Be sure to select MLSDK, NOT OpenXR, as the library).
 2. Clone the project repository: jaysonedu/CGUI_MLSegmentedDimmer (github.com)
-3. Open the SampleScene
+3. Open the main scene
 4. Connect the Magic Leap 2 headset to the Unity project and allow all file transfer. 
 5. If Developer Mode is not enabled on the headset, go to Settings > About > Click on Build Number 7 times
 6. On the Magic Leap 2 headset, enable the Segmented Dimmer feature by going to Settings > Display > Segmented Dimming
