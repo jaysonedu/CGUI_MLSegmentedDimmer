@@ -25,16 +25,16 @@ public class Dimming : MonoBehaviour
     private Renderer _cubeRenderer;
     
     
-    /*
+    
     [SerializeField]
     private GameObject sign;
     [SerializeField]
     private Renderer _signRenderer;
     [SerializeField]
-    private GameObject tree;
+    private GameObject Obj;
     [SerializeField]
-    private Renderer _treeRenderer;
-    */
+    private Renderer _objectRenderer;
+    
 
     [SerializeField]
     private Camera _mainCamera;
@@ -102,7 +102,7 @@ public class Dimming : MonoBehaviour
         _currentDimmer.text = "Cube dimmer is activated!\n";
     }
 
-    /*
+    
     public void SignDimmer()
     {
         _target = sign;
@@ -110,13 +110,13 @@ public class Dimming : MonoBehaviour
         _currentDimmer.text = "Sign dimmer is activated";
     }
 
-    public void TreeDimmer()
+    public void ObjectDimmer()
     {
-        _target = tree;
-        _dimmingRenderer = _treeRenderer;
-        _currentDimmer.text = "Tree dimmer is activated";
+        _target = Obj;
+        _dimmingRenderer = _objectRenderer;
+        _currentDimmer.text = "Donut dimmer is activated";
     }
-    */
+    
 
     public void DisableDimmer()
     {
