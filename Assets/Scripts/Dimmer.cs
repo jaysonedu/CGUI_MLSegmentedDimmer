@@ -107,14 +107,14 @@ public class Dimming : MonoBehaviour
     {
         _target = sign;
         _dimmingRenderer = _signRenderer;
-        _currentDimmer.text = "Sign dimmer is activated";
+        _currentDimmer.text = "Sign dimmer is activated!";
     }
 
     public void ObjectDimmer()
     {
         _target = Obj;
         _dimmingRenderer = _objectRenderer;
-        _currentDimmer.text = "Donut dimmer is activated";
+        _currentDimmer.text = "Donut dimmer is activated!";
     }
     
 
@@ -122,7 +122,7 @@ public class Dimming : MonoBehaviour
     {
         _target = null;
         _dimmingRenderer = null;
-        _currentDimmer.text = "Cube Dimmer paused\n";
+        _currentDimmer.text = "Segmented Dimmer is paused.\n";
     }
 
     void Update()
