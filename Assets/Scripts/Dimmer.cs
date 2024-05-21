@@ -97,6 +97,11 @@ public class Dimming : MonoBehaviour
 
     public void CubeDimmer()
     {
+        if (_target != null)
+        {
+            DimObject(_signRenderer, 0);
+            DimObject(_objectRenderer, 0);
+        }
         _target = cube;
         _dimmingRenderer = _cubeRenderer;
         _currentDimmer.text = "Cube dimmer is activated!\n";
@@ -105,6 +110,11 @@ public class Dimming : MonoBehaviour
     
     public void SignDimmer()
     {
+        if (_target != null)
+        {
+            DimObject(_cubeRenderer, 0);
+            DimObject(_objectRenderer, 0);
+        }
         _target = sign;
         _dimmingRenderer = _signRenderer;
         _currentDimmer.text = "Sign dimmer is activated!";
@@ -112,6 +122,11 @@ public class Dimming : MonoBehaviour
 
     public void ObjectDimmer()
     {
+        if (_target != null)
+        {
+            DimObject(_signRenderer, 0);
+            DimObject(_cubeRenderer, 0);
+        }
         _target = Obj;
         _dimmingRenderer = _objectRenderer;
         _currentDimmer.text = "Donut dimmer is activated!";
@@ -120,6 +135,12 @@ public class Dimming : MonoBehaviour
 
     public void DisableDimmer()
     {
+        if (_target != null)
+        {
+            DimObject(_signRenderer, 0);
+            DimObject(_objectRenderer, 0);
+            DimObject(_cubeRenderer, 0);
+        }
         _target = null;
         _dimmingRenderer = null;
         _currentDimmer.text = "Segmented Dimmer is paused.\n";
@@ -145,9 +166,9 @@ public class Dimming : MonoBehaviour
                         CopyTexture();
 
                         float calculatedAvgBrightness = ProcessPixels(targetBoundingBox);
-                        DimObject(calculatedAvgBrightness);
+                        DimObject(_dimmingRenderer, calculatedAvgBrightness);
 
-                        //_debugText.text += String.Format("  Display Opacity of Dimming Material: {0}\n", _dimmingRenderer.material.GetFloat("_DimmingValue"));
+                        _debugText.text += String.Format("  Display Opacity of Dimming Material: {0}\n", _dimmingRenderer.material.GetFloat("_DimmingValue"));
                     }
                 }
 
@@ -176,9 +197,9 @@ public class Dimming : MonoBehaviour
         _staggeredVideoTextureRgb.Apply();
     }
 
-    private void DimObject(float threshold)
+    private void DimObject(Renderer _dimRenderer, float threshold)
     {
-        _dimmingRenderer.material.SetFloat("_DimmingValue", threshold);
+        _dimRenderer.material.SetFloat("_DimmingValue", threshold);
     }
 
     private float ProcessPixels(Rect boundingBox)
